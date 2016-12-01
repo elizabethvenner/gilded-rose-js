@@ -1,3 +1,6 @@
+MAXQUALITY = 50
+MINQUALITY = 0
+
 function Item(name, sell_in, quality) {
   this.name = name;
   this.sell_in = sell_in;
@@ -6,32 +9,32 @@ function Item(name, sell_in, quality) {
 
 var items = [];
 var special_items = {
-  'Aged Brie': update_brie,
-  'Sulfuras': update_sulfuras
+  'Aged Brie': updateBrie,
+  'Sulfuras': updateSulfuras
 };
 
-function update_quality() {
+function updateQuality() {
   for (var i = 0; i < items.length; i++) {
-    console.log(0);
-    console.log(special_items.hasOwnProperty(items[i].name));
     if (special_items.hasOwnProperty(items[i].name) === true) {
-      (special_items[items[i].name])(items[i].name);
-      update_brie(items[i]);
+      (special_items[items[i].name])(items[i]);
+      console.log(items[i].quality);
     } else {
-      regular_item_update(items[i]);
+      regularItemUpdate(items[i]);
     }
   }
 }
 
-function regular_item_update(item) {
-  item.sell_in -=1;
+function regularItemUpdate(item) {
+  item.sell_in -= 1;
   item.quality -= 1;
 }
 
-function update_brie(item) {
-  item.quality +=1;
+function updateBrie(item) {
+  if (item.quality < MAXQUALITY){
+    item.quality +=1;
+  }
 }
 
-function update_sulfuras(item) {
+function updateSulfuras(item) {
   item.quality +=1;
 }
