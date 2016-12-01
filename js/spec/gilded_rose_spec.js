@@ -19,8 +19,8 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toEqual(1);
     });
 
-    it('does not decrease quality of aged brie', function() {
-      expect(items[1].quality).toEqual(2);
+    it('increases quality of aged brie', function() {
+      expect(items[1].quality).toEqual(3);
     });
   });
 });

@@ -4,12 +4,20 @@ function Item(name, sell_in, quality) {
   this.quality = quality;
 }
 
-var items = []
-var special_items = ['Aged Brie']
+var items = [];
+var special_items = {
+  'Aged Brie': update_brie,
+  'Sulfuras': update_sulfuras
+};
 
 function update_quality() {
   for (var i = 0; i < items.length; i++) {
-    if (!special_item(items[i].name)) {
+    console.log(0);
+    console.log(special_items.hasOwnProperty(items[i].name));
+    if (special_items.hasOwnProperty(items[i].name) === true) {
+      (special_items[items[i].name])(items[i].name);
+      update_brie(items[i]);
+    } else {
       regular_item_update(items[i]);
     }
   }
@@ -20,6 +28,10 @@ function regular_item_update(item) {
   item.quality -= 1;
 }
 
-function special_item(item) {
-  return special_items.includes(item);
+function update_brie(item) {
+  item.quality +=1;
+}
+
+function update_sulfuras(item) {
+  item.quality +=1;
 }
