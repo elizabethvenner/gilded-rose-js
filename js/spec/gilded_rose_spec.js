@@ -8,7 +8,7 @@ describe("Gilded Rose", function() {
 
   describe('update_quality', function() {
 
-    items = [new Item('item', 2, 2), new Item('Aged Brie', 2, 2)];
+    items = [new Item('Mead', 2, 2), new Item('Aged Brie', 2, 2)];
     update_quality();
 
     it('decreases sell_in by 1', function() {
