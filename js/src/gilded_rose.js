@@ -8,7 +8,11 @@ var items = []
 
 function update_quality() {
   for (var i = 0; i < items.length; i++) {
-    items[i].sell_in -=1;
-    items[i].quality -= 1;
+    regular_item_update(items[0]);
   }
+}
+
+function regular_item_update(item) {
+  item.sell_in -=1;
+  item.quality -= 1;
 }
