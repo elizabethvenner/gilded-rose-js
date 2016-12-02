@@ -1,11 +1,11 @@
-MAXQUALITY = 50
-MINQUALITY = 0
-
 function Item(name, sell_in, quality) {
   this.name = name;
   this.sellIn = sell_in;
   this.quality = quality;
 }
+
+MAXQUALITY = 50
+MINQUALITY = 0
 
 var items = [];
 
