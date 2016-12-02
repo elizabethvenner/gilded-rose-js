@@ -1,9 +1,9 @@
 describe("Gilded Rose", function() {
 
-  xit("should foo", function() {
+  it("should foo", function() {
     items = [ new Item("foo", 0, 0) ];
     updateQuality();
-    expect(items[0].name).toEqual("fixme");
+    expect(items[0].name).toEqual("foo");
   });
 
   describe('updateQuality', function() {
